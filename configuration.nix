@@ -15,7 +15,8 @@
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-
+  boot.supportedFilesystems = [ "ntfs" ];
+  
   networking.hostName = "desktop"; # Define your hostname.
   networking.networkmanager.enable = true;  # Enables wireless support via network manager
 
@@ -44,7 +45,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    wget vim firefox emacs git home-manager neofetch networkmanager spotify teams
+    wget vim firefox emacs git home-manager neofetch networkmanager spotify teams libreoffice
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -91,7 +92,7 @@
 
   users.users.michael = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "networkmanager" "audio" "video" ]; # Enable ‘sudo’ for the user.
   };
 
   # This value determines the NixOS release from which the default
