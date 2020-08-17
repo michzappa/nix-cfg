@@ -45,7 +45,17 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    wget vim firefox emacs git home-manager neofetch networkmanager spotify teams libreoffice
+    wget
+    vim
+    firefox
+    emacs
+    git
+    home-manager
+    neofetch
+    networkmanager
+    spotify
+    teams
+    libreoffice
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
