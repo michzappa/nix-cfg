@@ -60,6 +60,7 @@
     signal-desktop
     bitwarden
     unetbootin
+    gparted
 
     # Utilities for XMonad
     haskellPackages.xmobar
