@@ -11,6 +11,7 @@
   home-manager.users.michael = import ./home/config.nix;
   nixpkgs.config.allowUnfree = true;
   
+  services.dbus.packages = with pkgs; [ blueman ];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -68,6 +69,8 @@
     playerctl
     rofi
     conky
+    breeze-gtk
+    lxappearance
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -96,9 +99,10 @@
     drivers = [pkgs.gutenprint pkgs.gutenprintBin pkgs.hplip pkgs.hplipWithPlugin];
   };
 
-  # Enable sound.
+  # Enable sound and bluetooth.
   sound.enable = true;
   hardware.bluetooth.enable = true;
+  services.blueman.enable = true;
   hardware.pulseaudio = {
     enable = true;
     package = pkgs.pulseaudioFull;
