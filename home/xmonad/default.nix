@@ -11,4 +11,9 @@
       ];
       config = ./xmonad.hs;
     };
+
+  home.file.".xmonad/xmobarrc.hs" = {
+    source = ./xmobarrc.hs;
+    recursive = true;
+  };
 }

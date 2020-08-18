@@ -4,6 +4,7 @@
   imports = [
     ./git.nix
     ./bash.nix
+    ./rofi.nix
     ./emacs
     ./xmonad
   ];
@@ -15,10 +16,10 @@
     recursive = true;
   };
 
-  home.file.".config/rofi" = {
-    source = ./rofi;
-    recursive = true;
-  };
+  # home.file.".config/rofi" = {
+  #   source = ./rofi;
+  #   recursive = true;
+  # };
 
   home.file.".config/kitty" = {
     source = ./kitty;
