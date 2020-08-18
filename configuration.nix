@@ -70,6 +70,7 @@
     trayer
     playerctl
     rofi
+    redshift
     conky
     breeze-gtk
     arc-theme
@@ -83,6 +84,7 @@
     noto-fonts-emoji
     jetbrains-mono
   ];
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
