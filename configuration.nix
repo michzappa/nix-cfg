@@ -57,6 +57,9 @@
     teams
     libreoffice
     jetbrains.idea-ultimate
+    signal-desktop
+    bitwarden
+    unetbootin
 
     # Utilities for XMonad
     haskellPackages.xmobar
@@ -124,18 +127,9 @@
   services.xserver = {
     enable = true;
     layout = "us";
+
     displayManager.sddm.enable = true;
     desktopManager.plasma5.enable = true;
-    
-    windowManager.xmonad = {
-      enable = true;
-      enableContribAndExtras = true;
-      extraPackages = haskellPackages: [
-        haskellPackages.xmonad-contrib
-        haskellPackages.xmonad-extras
-        haskellPackages.xmonad
-      ];
-    };
   };
 
   users.users.michael = {

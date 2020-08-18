@@ -5,14 +5,10 @@
     ./git.nix
     # ./bash.nix
     ./emacs
+    ./xmonad
   ];
 
   programs.home-manager.enable = true;
-
-  home.file.".xmonad" = {
-    source = ./xmonad;
-    recursive = true;
-  };
 
   home.file.".scripts" = {
     source = ./scripts;
