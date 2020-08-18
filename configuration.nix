@@ -140,7 +140,7 @@
 
   users.users.michael = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "audio" "video" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "networkmanager" "audio" "video" ];
   };
 
   # This value determines the NixOS release from which the default
