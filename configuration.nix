@@ -8,7 +8,7 @@
     ];
 
   home-manager.useUserPackages = true;
-  home-manager.users.michael = import ./home/gui.nix;
+  home-manager.users.michael = import ./home/config.nix;
   nixpkgs.config.allowUnfree = true;
   
 
@@ -41,7 +41,6 @@
   # Set your time zone.
   time.timeZone = "America/Chicago";
 
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -56,6 +55,19 @@
     spotify
     teams
     libreoffice
+    jetbrains.idea-ultimate
+
+    # Utilities for XMonad
+    haskellPackages.xmobar
+    nitrogen
+    picom
+    networkmanagerapplet
+    blueman
+    pasystray
+    trayer
+    playerctl
+    rofi
+    conky
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -98,6 +110,16 @@
     layout = "us";
     displayManager.sddm.enable = true;
     desktopManager.plasma5.enable = true;
+
+    windowManager.xmonad = {
+      enable = true;
+      enableContribAndExtras = true;
+      extraPackages = haskellPackages: [
+        haskellPackages.xmonad-contrib
+        haskellPackages.xmonad-extras
+        haskellPackages.xmonad
+      ];
+    };
   };
 
   users.users.michael = {
