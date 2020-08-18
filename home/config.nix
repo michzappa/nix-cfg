@@ -3,7 +3,7 @@
 {
   imports = [
     ./git.nix
-    # ./bash.nix
+    ./bash.nix
     ./emacs
     ./xmonad
   ];
