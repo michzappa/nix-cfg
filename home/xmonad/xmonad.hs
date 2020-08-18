@@ -32,7 +32,7 @@ import Control.Monad (when, join)
 import Control.Arrow (first)
 
 myTerminal :: String
-myTerminal = "konsole"
+myTerminal = "kitty"
 
 myFont :: String
 myFont = "xft:JetBrains Mono:pixelsize=16:antialias=true:hinting=true"
@@ -98,7 +98,7 @@ myKeys =
     [
       ("M-x", spawn "firefox"),
       ("M-c", spawn "code"),
-      ("M-n", spawn "dolphin"),
+      ("M-n", spawn "thunar"),
       ("M-m", spawn "emacs"),
       ("M-S-/", treeselectAction)
     ]
@@ -352,7 +352,7 @@ myTreeNavigation = M.fromList
 
 main :: IO ()
 main = do
-    xmproc <- spawnPipe "xmobar ~/.xmonad/.xmobarrc.hs"
+    xmproc <- spawnPipe "xmobar ~/.xmonad/xmobarrc.hs"
 
     xmonad $ ewmh $ docks def
         { terminal = myTerminal

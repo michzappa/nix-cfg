@@ -17,13 +17,13 @@
     recursive = true;
   };
 
-  home.file.".fonts" = {
-    source = ./fonts;
+  home.file.".config/rofi" = {
+    source = ./rofi;
     recursive = true;
   };
 
-  home.file.".config/rofi" = {
-    source = ./rofi;
+  home.file.".config/kitty" = {
+    source = ./kitty;
     recursive = true;
   };
 }

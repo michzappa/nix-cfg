@@ -60,6 +60,8 @@
 
     # Utilities for XMonad
     haskellPackages.xmobar
+    xfce.thunar
+    kitty
     nitrogen
     picom
     networkmanagerapplet
@@ -70,9 +72,17 @@
     rofi
     conky
     breeze-gtk
+    arc-theme
+    arc-kde-theme
     lxappearance
   ];
 
+  fonts.fonts = with pkgs; [
+    noto-fonts
+    noto-fonts-cjk
+    noto-fonts-emoji
+    jetbrains-mono
+  ];
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -114,7 +124,7 @@
     layout = "us";
     displayManager.sddm.enable = true;
     desktopManager.plasma5.enable = true;
-
+    
     windowManager.xmonad = {
       enable = true;
       enableContribAndExtras = true;
