@@ -78,6 +78,7 @@
     breeze-gtk
     arc-theme
     arc-kde-theme
+    faba-mono-icons
     lxappearance
   ];
 
