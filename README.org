@@ -4,6 +4,7 @@
 #+BEGIN_SRC bash
 chown michael:users /etc/nixos
 git clone https://github.com/michzappa/nix-cfg.git /etc/nixos
+ln -s /etc/nixos/hosts/${HOSTNAME} /etc/nixos/host
 sudo nix-channel --add https://github.com/rycee/home-manager/archive/master.tar.gz home-manager
 sudo nix-channel --update
 sudo nixos-rebuild switch
