@@ -5,10 +5,16 @@ let
  }) {
    doomPrivateDir = ./doom.d;  # Directory containing your config.el init.el
                                # and packages.el files
+   extraPackages = epkgs: (with epkgs.melpaPackages; [ request ]);
  };
 in {
+  home.packages = with pkgs; [
+    emacs-all-the-icons-fonts
+    fira-code-symbols
+  ];
+  
   programs.emacs = {
     enable = true;
     package = doom-emacs;
   };
-}
+} 
