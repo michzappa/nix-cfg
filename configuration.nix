@@ -4,6 +4,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./host/hardware-configuration.nix
+      ./host/config.nix
       <home-manager/nixos>
     ];
 
@@ -19,22 +20,6 @@
   boot.supportedFilesystems = [ "ntfs" ];
   
   networking.networkmanager.enable = true;  # Enables wireless support via network manager
-
-  # The global useDHCP flag is deprecated, therefore explicitly set to false here.
-  # Per-interface useDHCP will be mandatory in the future, so this generated config
-  # replicates the default behaviour.
-
-# desktop networking
-#  networking.useDHCP = false;
-#  networking.hostName = "desktop"; # Define your hostname.
-#  networking.interfaces.enp6s0.useDHCP = true;
-#  networking.interfaces.wlp2s0.useDHCP = true;
-
-# laptop networking
-  networking.useDHCP = false;
-  networking.hostName = "xps";
-  networking.interfaces.wlp59s0.useDHCP = true;
-  networking.interfaces.ens20u1.useDHCP = true;
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";

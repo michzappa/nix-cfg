@@ -65,7 +65,7 @@
  '(default ((t (:background "#21242b")))))
 
 
-(require 'elfeed-org)
-(elfeed-org)
-(setq elfeed-db-directory "~/.elfeed")
-(setq rmh-elfeed-org-files (list "~/.doom.d/elfeed.org"))
+;;(require 'elfeed-org)
+;;(elfeed-org)
+;;(setq elfeed-db-directory "~/.elfeed")
+;;(setq rmh-elfeed-org-files (list "~/.doom.d/elfeed.org"))
