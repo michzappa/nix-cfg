@@ -18,6 +18,9 @@
   boot.supportedFilesystems = [ "ntfs" ];
   
   networking.networkmanager.enable = true;  # Enables wireless support via network manager
+  networking.useDHCP = false;
+  networking.interfaces.wlp59s0.useDHCP = true;
+  networking.interfaces.ens20u1.useDHCP = true;
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
