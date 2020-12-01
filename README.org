@@ -9,3 +9,10 @@ sudo nix-channel --add https://github.com/rycee/home-manager/archive/master.tar.
 sudo nix-channel --update
 sudo nixos-rebuild switch
 #+END_SRC
+* For rebuilding GNOME dconf config
+- dconf dump / > ~/dconf.settings
+- dconf2nix -i ~/dconf.settings /etc/nixos/home/dconf.nix
+* TODO
+    - fish shell
+    - gnome pop shell
+    - gnome only have desired GNOME applications

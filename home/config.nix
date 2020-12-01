@@ -2,8 +2,10 @@
 
 {
   imports = [
-    ./git.nix
     ./bash.nix
+    ./dconf.nix
+    ./git.nix
+    ./vim.nix
     ./emacs
   ];
 

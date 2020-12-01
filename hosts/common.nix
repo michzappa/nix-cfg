@@ -30,12 +30,12 @@
   };
 
   # Set your time zone.
-  time.timeZone = "America/Chicago";
+  time.timeZone = "America/NewYork";
 
   services.emacs.enable = true;
   
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
+  environment.variables = { EDITOR = "vim"; };
+  
   environment.systemPackages = with pkgs; [
     wget
     vim
@@ -96,12 +96,18 @@
     extraModules = [ pkgs.pulseaudio-modules-bt ];
   };
 
-  services.xserver = {
-    enable = true;
-    layout = "us";
+  services = {
 
-    displayManager.sddm.enable = true;
-    desktopManager.plasma5.enable = true;
+    xserver = {
+      enable = true;
+      layout = "us";
+
+      displayManager.gdm.enable = true;
+      desktopManager.gnome3.enable = true;
+    };
+
+      dbus.packages = [ pkgs.gnome3.dconf ];
+      udev.packages = [ pkgs.gnome3.gnome-settings-daemon ];
   };
 
   users.users.michael = {
