@@ -52,7 +52,7 @@
     bitwarden
     unetbootin
     gparted
-    dconf2nix
+    #dconf2nix - put back in after a new release
   ];
 
   fonts.fonts = with pkgs; [
