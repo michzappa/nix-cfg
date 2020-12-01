@@ -30,7 +30,7 @@
   };
 
   # Set your time zone.
-  time.timeZone = "America/NewYork";
+  time.timeZone = "America/New_York";
 
   services.emacs.enable = true;
   
@@ -52,6 +52,7 @@
     bitwarden
     unetbootin
     gparted
+    dconf2nix
   ];
 
   fonts.fonts = with pkgs; [
