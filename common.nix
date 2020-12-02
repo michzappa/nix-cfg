@@ -7,7 +7,7 @@
     ];
 
   home-manager.useUserPackages = true;
-  home-manager.users.michael = import ../home/config.nix;
+  home-manager.users.michael = import ./home/config.nix;
   nixpkgs.config.allowUnfree = true;
   
   # Use the systemd-boot EFI boot loader.
@@ -33,28 +33,41 @@
   time.timeZone = "America/New_York";
 
   services.emacs.enable = true;
+  programs.fish.enable = true;
   
-  environment.variables = { EDITOR = "vim"; };
+  environment = {
+    gnome3 = {
+      # exclude packages?
+    };
+      
+    variables = { EDITOR = "vim"; };
   
-  environment.systemPackages = with pkgs; [
-    wget
-    vim
-    firefox
-    git
-    home-manager
-    neofetch
-    networkmanager
-    spotify
-    teams
-    libreoffice
-    jetbrains.idea-ultimate
-    signal-desktop
-    bitwarden
-    unetbootin
-    gparted
-    #dconf2nix - put back in after a new release
-  ];
+    systemPackages = with pkgs; [
+      #Utilities
+      wget
+      vim
+      git
+      home-manager
+      neofetch
+      networkmanager
+      gparted
+      #dconf2nix - put back in after a new release
 
+      #Apps
+      firefox
+      spotify
+      teams
+      libreoffice
+      jetbrains.idea-ultimate
+      signal-desktop
+      bitwarden
+      unetbootin
+      
+      #Desktop
+      gnome3.gnome-tweaks
+    ];
+  };
+  
   fonts.fonts = with pkgs; [
     noto-fonts
     noto-fonts-cjk
@@ -107,11 +120,12 @@
       desktopManager.gnome3.enable = true;
     };
 
-      dbus.packages = [ pkgs.gnome3.dconf ];
-      udev.packages = [ pkgs.gnome3.gnome-settings-daemon ];
+    dbus.packages = [ pkgs.gnome3.dconf ];
+    udev.packages = [ pkgs.gnome3.gnome-settings-daemon ];
   };
 
   users.users.michael = {
+    shell = pkgs.fish;
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" "audio" "video" ];
   };

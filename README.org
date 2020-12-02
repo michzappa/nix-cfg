@@ -12,7 +12,7 @@ sudo nixos-rebuild switch
 * For rebuilding GNOME dconf config
 - dconf dump / > ~/dconf.settings
 - dconf2nix -i ~/dconf.settings /etc/nixos/home/dconf.nix
-* TODO
-    - fish shell
+* To-Do
+    - gnome terminal
     - gnome pop shell
     - gnome only have desired GNOME applications

@@ -3,7 +3,7 @@
 {
   imports =
     [
-      ../hosts/common.nix
+      ../common.nix
     ];
 
   networking.hostName = "xps";
