@@ -6,13 +6,13 @@ let
 in
 {
   dconf.settings = {
-    "apps/seahorse/windows/key-manager" = {
-      height = 476;
-      width = 600;
+    "org/gnome/Totem" = {
+      active-plugins = [ "movie-properties" "save-file" "vimeo" "apple-trailers" "rotation" "recent" "autoload-subtitles" "media-player-keys" "open-directory" "variable-rate" "skipto" "screensaver" "screenshot" ];
+      subtitle-encoding = "UTF-8";
     };
 
     "org/gnome/control-center" = {
-      last-panel = "keyboard";
+      last-panel = "display";
     };
 
     "org/gnome/desktop/input-sources" = {
@@ -24,7 +24,8 @@ in
     "org/gnome/desktop/interface" = {
       clock-format = "12h";
       gtk-im-module = "gtk-im-context-simple";
-      gtk-theme = "Adwaita-dark";
+      gtk-theme = "HighContrastInverse";
+      show-battery-percentage = false;
     };
 
     "org/gnome/desktop/notifications" = {
@@ -79,7 +80,10 @@ in
     };
 
     "org/gnome/settings-daemon/plugins/color" = {
+      night-light-enabled = true;
       night-light-last-coordinates = mkTuple [ 42.3030007199424 "-71.1081" ];
+      night-light-schedule-automatic = false;
+      night-light-temperature = "uint32 2261";
     };
 
     "org/gnome/settings-daemon/plugins/media-keys" = {
@@ -108,6 +112,7 @@ in
 
     "org/gnome/shell" = {
       app-picker-view = "uint32 1";
+      enabled-extensions = [ "apps-menu@gnome-shell-extensions.gcampax.github.com" ];
       favorite-apps = [ "firefox.desktop" "org.gnome.Terminal.desktop" "emacs.desktop" "idea-ultimate.desktop" "org.gnome.Nautilus.desktop" ];
     };
 

@@ -32,13 +32,27 @@
   # Set your time zone.
   time.timeZone = "America/New_York";
 
-  services.emacs.enable = true;
-  programs.fish.enable = true;
+  programs = {
+    gnome-terminal = {
+      enable = true;
+    };
+
+    fish = {
+      enable = true;
+    };
+  };
   
   environment = {
-    gnome3 = {
-      # exclude packages?
-    };
+    # gnome3 = {
+    #   # exclude packages?
+    #   excludePackages = with pkgs.gnome3; [
+    #     cheese
+    #     geary
+    #     gnome-music
+    #     gnome-maps
+    #     seahorse
+    #   ];
+    # };
       
     variables = { EDITOR = "vim"; };
   
@@ -62,9 +76,16 @@
       signal-desktop
       bitwarden
       unetbootin
+      # discord
+      # steam
       
       #Desktop
       gnome3.gnome-tweaks
+      gnome3.gnome-terminal
+      gnome3.nautilus
+      gnomeExtensions.appindicator
+      
+      # gnomeExtensions.no-title-bar - marked as broken
     ];
   };
   
@@ -75,19 +96,7 @@
     jetbrains-mono
   ];
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  #   pinentryFlavor = "gnome3";
-  # };
-
   # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
@@ -95,23 +104,33 @@
   # Or disable the firewall altogether.
   networking.firewall.enable = false;
 
-  # Enable CUPS to print documents.
-  services.printing = {
-    enable = true;
-    drivers = [pkgs.gutenprint pkgs.gutenprintBin pkgs.hplip pkgs.hplipWithPlugin];
-  };
-
   # Enable sound and bluetooth.
   sound.enable = true;
-  hardware.bluetooth.enable = true;
-  hardware.pulseaudio = {
-    enable = true;
-    package = pkgs.pulseaudioFull;
-    extraModules = [ pkgs.pulseaudio-modules-bt ];
+  hardware = {
+    bluetooth = {
+      enable = true;
+    };
+    pulseaudio = {
+      enable = true;
+      package = pkgs.pulseaudioFull;
+      extraModules = [ pkgs.pulseaudio-modules-bt ];
+    };
   };
 
   services = {
-
+    emacs = {
+      enable = true;
+    };
+    
+    openssh = {
+      enable = true;
+    };
+      
+    printing = {
+      enable = true;
+      drivers = [pkgs.gutenprint pkgs.gutenprintBin pkgs.hplip pkgs.hplipWithPlugin];
+    };
+      
     xserver = {
       enable = true;
       layout = "us";
@@ -120,6 +139,10 @@
       desktopManager.gnome3.enable = true;
     };
 
+    gnome3 = {
+      core-utilities.enable = false;
+    };
+      
     dbus.packages = [ pkgs.gnome3.dconf ];
     udev.packages = [ pkgs.gnome3.gnome-settings-daemon ];
   };
