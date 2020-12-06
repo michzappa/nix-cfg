@@ -6,13 +6,24 @@ let
 in
 {
   dconf.settings = {
+    "apps/seahorse/windows/key-manager" = {
+      height = 476;
+      width = 600;
+    };
+
+    "org/gnome/Music" = {
+      window-maximized = true;
+      window-position = [ 0 0 ];
+      window-size = [ 1920 1006 ];
+    };
+
     "org/gnome/Totem" = {
       active-plugins = [ "movie-properties" "save-file" "vimeo" "apple-trailers" "rotation" "recent" "autoload-subtitles" "media-player-keys" "open-directory" "variable-rate" "skipto" "screensaver" "screenshot" ];
       subtitle-encoding = "UTF-8";
     };
 
     "org/gnome/control-center" = {
-      last-panel = "display";
+      last-panel = "keyboard";
     };
 
     "org/gnome/desktop/input-sources" = {
@@ -81,14 +92,14 @@ in
 
     "org/gnome/settings-daemon/plugins/color" = {
       night-light-enabled = true;
-      night-light-last-coordinates = mkTuple [ 42.3030007199424 "-71.1081" ];
+      night-light-last-coordinates = mkTuple [ 42.29400143988481 "-71.1081" ];
       night-light-schedule-automatic = false;
       night-light-temperature = "uint32 2261";
     };
 
     "org/gnome/settings-daemon/plugins/media-keys" = {
-      custom-keybindings = [ "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/" "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/" ];
-      home = [ "<Super>n" ];
+      custom-keybindings = [ "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/" "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/" "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/" ];
+      screensaver = "@as []";
       search = [ "<Super>slash" ];
       www = [ "<Super>x" ];
     };
@@ -103,6 +114,12 @@ in
       binding = "<Super>m";
       command = "emacs";
       name = "Emacs";
+    };
+
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
+      binding = "<Super>n";
+      command = "nautilus";
+      name = "Nautilus";
     };
 
     "org/gnome/settings-daemon/plugins/xsettings" = {

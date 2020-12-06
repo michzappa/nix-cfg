@@ -13,5 +13,3 @@ sudo nixos-rebuild switch
 - dconf dump / > ~/dconf.settings
 - dconf2nix -i ~/dconf.settings /etc/nixos/home/dconf.nix
 * To-Do
-    - gnome pop shell
-    - trim down gnome applications? or just keep all the defaults

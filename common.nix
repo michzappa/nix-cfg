@@ -6,24 +6,47 @@
       <home-manager/nixos>
     ];
 
-  home-manager.useUserPackages = true;
-  home-manager.users.michael = import ./home/config.nix;
   nixpkgs.config.allowUnfree = true;
+
+  home-manager = {
+    useUserPackages = true;
+    users.michael = import ./home/config.nix;
+  };
   
   # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.supportedFilesystems = [ "ntfs" ];
+  boot = {
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
+
+    supportedFilesystems = [ "ntfs" ];
+  };
   
-  networking.networkmanager.enable = true;  # Enables wireless support via network manager
-  networking.useDHCP = false;
+  networking = {
+    networkmanager = {
+      enable = true;  # Enables wireless support via network manager
+    };
+    useDHCP = false;
+  };
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
+  i18n = {
+    defaultLocale = "en_US.UTF-8";
+    # input methods for chinese and japanese. don't show up on GNOME
+    inputMethod = {
+      enabled = "fcitx";
+      fcitx.engines = with pkgs.fcitx-engines; [
+        mozc
+        chewing
+        cloudpinyin
+      ];
+    };
+  };
   console = {
     font = "Lat2-Terminus16";
     keyMap = "us";
@@ -43,17 +66,6 @@
   };
   
   environment = {
-    # gnome3 = {
-    #   # exclude packages?
-    #   excludePackages = with pkgs.gnome3; [
-    #     cheese
-    #     geary
-    #     gnome-music
-    #     gnome-maps
-    #     seahorse
-    #   ];
-    # };
-      
     variables = { EDITOR = "vim"; };
   
     systemPackages = with pkgs; [
