@@ -37,16 +37,22 @@
   # Select internationalisation properties.
   i18n = {
     defaultLocale = "en_US.UTF-8";
-    # input methods for chinese and japanese. don't show up on GNOME
-    inputMethod = {
-      enabled = "fcitx";
-      fcitx.engines = with pkgs.fcitx-engines; [
-        mozc
-        chewing
-        cloudpinyin
-      ];
-    };
+    # input methods for chinese and japanese. don't show up on GNOME or in fcitx-config
+    # inputMethod = {
+    #   enabled = "fcitx";
+    #   fcitx.engines = with pkgs.fcitx-engines; [
+    #     mozc
+    #     chewing
+    #     cloudpinyin
+    #   ];
+    #   enabled = "ibus";
+    #   ibus.engines = with pkgs.ibus-engines; [
+    #     libpinyin
+    #     mozc
+    #   ];
+    # };
   };
+
   console = {
     font = "Lat2-Terminus16";
     keyMap = "us";
@@ -85,9 +91,9 @@
       teams
       libreoffice
       jetbrains.idea-ultimate
+      jetbrains.clion
       signal-desktop
       bitwarden
-      unetbootin
       # discord
       # steam
       
@@ -96,8 +102,6 @@
       gnome3.gnome-terminal
       gnome3.nautilus
       gnomeExtensions.appindicator
-      
-      # gnomeExtensions.no-title-bar - marked as broken
     ];
   };
   
