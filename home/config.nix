@@ -4,9 +4,10 @@
   imports = [
     ./bash.nix
     ./dconf.nix
+    ./emacs
     ./git.nix
     ./vim.nix
-    ./emacs
+    ./vscode.nix
   ];
 
   programs.home-manager.enable = true;

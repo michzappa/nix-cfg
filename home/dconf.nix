@@ -23,7 +23,7 @@ in
     };
 
     "org/gnome/control-center" = {
-      last-panel = "mouse";
+      last-panel = "keyboard";
     };
 
     "org/gnome/desktop/input-sources" = {
@@ -97,13 +97,13 @@ in
 
     "org/gnome/settings-daemon/plugins/color" = {
       night-light-enabled = true;
-      night-light-last-coordinates = mkTuple [ 44.91949856011519 "-93.3719" ];
+      night-light-last-coordinates = mkTuple [ 44.91502986011519 "-93.3620452" ];
       night-light-schedule-automatic = false;
       night-light-temperature = "uint32 2261";
     };
 
     "org/gnome/settings-daemon/plugins/media-keys" = {
-      custom-keybindings = [ "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/" "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/" "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/" ];
+      custom-keybindings = [ "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/" "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/" "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/" "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/" ];
       screensaver = [ "@as []" ];
       search = [ "<Super>slash" ];
       www = [ "<Super>x" ];
@@ -125,6 +125,12 @@ in
       binding = "<Super>n";
       command = "nautilus";
       name = "Nautilus";
+    };
+
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3" = {
+      binding = "<Super>c";
+      command = "code";
+      name = "VSCode";
     };
 
     "org/gnome/settings-daemon/plugins/xsettings" = {
