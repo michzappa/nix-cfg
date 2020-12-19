@@ -36,12 +36,12 @@ in
     "org/gnome/desktop/interface" = {
       clock-format = "12h";
       gtk-im-module = "gtk-im-context-simple";
-      gtk-theme = "Adwaita-dark";
+      gtk-theme = "Nordic-darker";
       show-battery-percentage = false;
     };
 
     "org/gnome/desktop/notifications" = {
-      application-children = [ "gnome-network-panel" "gnome-power-panel" "firefox" "teams" ];
+      application-children = [ "gnome-network-panel" "gnome-power-panel" "firefox" "teams" "org-gnome-tweaks" "org-gnome-nautilus" ];
     };
 
     "org/gnome/desktop/notifications/application/firefox" = {
@@ -54,6 +54,14 @@ in
 
     "org/gnome/desktop/notifications/application/gnome-power-panel" = {
       application-id = "gnome-power-panel.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/org-gnome-nautilus" = {
+      application-id = "org.gnome.Nautilus.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/org-gnome-tweaks" = {
+      application-id = "org.gnome.tweaks.desktop";
     };
 
     "org/gnome/desktop/notifications/application/teams" = {
@@ -103,7 +111,6 @@ in
 
     "org/gnome/settings-daemon/plugins/color" = {
       night-light-enabled = true;
-      night-light-last-coordinates = mkTuple [ 44.91949856011519 "-93.3719" ];
       night-light-schedule-automatic = false;
       night-light-temperature = "uint32 2261";
     };
@@ -165,13 +172,13 @@ in
 
     "org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9" = {
       audible-bell = false;
-      background-color = "rgb(46,52,54)";
+      background-color = "rgb(0,43,54)";
       custom-command = "fish";
-      foreground-color = "rgb(211,215,207)";
+      foreground-color = "rgb(131,148,150)";
       login-shell = false;
       palette = [ "rgb(46,52,54)" "rgb(204,0,0)" "rgb(78,154,6)" "rgb(196,160,0)" "rgb(52,101,164)" "rgb(117,80,123)" "rgb(6,152,154)" "rgb(211,215,207)" "rgb(85,87,83)" "rgb(239,41,41)" "rgb(138,226,52)" "rgb(252,233,79)" "rgb(114,159,207)" "rgb(173,127,168)" "rgb(52,226,226)" "rgb(238,238,236)" ];
       use-custom-command = true;
-      use-theme-colors = false;
+      use-theme-colors = true;
       visible-name = "michael";
     };
 
@@ -190,5 +197,6 @@ in
       window-position = mkTuple [ 0 79 ];
       window-size = mkTuple [ 1231 902 ];
     };
+
   };
 }

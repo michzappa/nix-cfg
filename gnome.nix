@@ -9,6 +9,7 @@
     gnome3.gnome-terminal
     gnome3.nautilus
     gnomeExtensions.appindicator
+    nordic # gtk theme
   ];
 
   services = {

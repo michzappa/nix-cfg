@@ -7,6 +7,7 @@
     
     userSettings = {
       "[nix]"."editor.tabSize" = 2;
+      "workbench.colorTheme" = "Nord";
     };
     
     # to update vscode packages run 'nixpkgs/pkgs/misc/vscode-extensions/update_installed_exts.sh' 
@@ -16,6 +17,13 @@
       bbenoist.Nix
 
     ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace[
+      {
+        name = "nord-visual-studio-code";
+        publisher = "arcticicestudio";
+        version = "0.15.0";
+        sha256 = "066rqj8sf910n71g5njbp5g8advzqkd3g2lsg12wai902735i78c";
+      }
+
       {
         name = "nix-env-selector";
         publisher = "arrterian";
