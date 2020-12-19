@@ -11,5 +11,5 @@ sudo nixos-rebuild switch
 #+END_SRC
 * For rebuilding GNOME dconf config
 - dconf dump / > ~/dconf.settings
-- dconf2nix -i ~/dconf.settings /etc/nixos/home/dconf.nix
+- dconf2nix -i ~/dconf.settings -o /etc/nixos/home/dconf.nix
 * To-Do
