@@ -40,7 +40,7 @@ in
     };
 
     "org/gnome/desktop/notifications" = {
-      application-children = [ "gnome-network-panel" "gnome-power-panel" "firefox" ];
+      application-children = [ "gnome-network-panel" "gnome-power-panel" "firefox" "teams" ];
     };
 
     "org/gnome/desktop/notifications/application/firefox" = {
@@ -53,6 +53,10 @@ in
 
     "org/gnome/desktop/notifications/application/gnome-power-panel" = {
       application-id = "gnome-power-panel.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/teams" = {
+      application-id = "teams.desktop";
     };
 
     "org/gnome/desktop/peripherals/touchpad" = {
@@ -140,7 +144,7 @@ in
 
     "org/gnome/shell" = {
       app-picker-view = "uint32 1";
-      enabled-extensions = [ "apps-menu@gnome-shell-extensions.gcampax.github.com" ];
+      enabled-extensions = [ "apps-menu@gnome-shell-extensions.gcampax.github.com" "appindicatorsupport@rgcjonas.gmail.com" ];
       favorite-apps = [ "firefox.desktop" "org.gnome.Terminal.desktop" "emacs.desktop" "idea-ultimate.desktop" "org.gnome.Nautilus.desktop" ];
     };
 
@@ -173,7 +177,7 @@ in
       clock-format = "12h";
       date-format = "regular";
       location-mode = "path-bar";
-      show-hidden = false;
+      show-hidden = true;
       show-size-column = true;
       show-type-column = true;
       sidebar-width = 158;
@@ -181,7 +185,7 @@ in
       sort-directories-first = false;
       sort-order = "ascending";
       type-format = "category";
-      window-position = mkTuple [ 345 79 ];
+      window-position = mkTuple [ 0 79 ];
       window-size = mkTuple [ 1231 902 ];
     };
 
