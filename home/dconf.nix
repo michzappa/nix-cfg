@@ -23,12 +23,12 @@ in
     };
 
     "org/gnome/control-center" = {
-      last-panel = "keyboard";
+      last-panel = "mouse";
     };
 
     "org/gnome/desktop/input-sources" = {
       current = "uint32 0";
-      sources = [ (mkTuple [ "xkb" "us" ]) (mkTuple [ "xkb" "us+alt-intl" ]) ];
+      sources = [ (mkTuple [ "xkb" "us" ]) ];
       xkb-options = [ "terminate:ctrl_alt_bksp" "lv3:ralt_switch" ];
     };
 
@@ -40,7 +40,11 @@ in
     };
 
     "org/gnome/desktop/notifications" = {
-      application-children = [ "gnome-network-panel" "gnome-power-panel" ];
+      application-children = [ "gnome-network-panel" "gnome-power-panel" "firefox" ];
+    };
+
+    "org/gnome/desktop/notifications/application/firefox" = {
+      application-id = "firefox.desktop";
     };
 
     "org/gnome/desktop/notifications/application/gnome-network-panel" = {
@@ -52,6 +56,7 @@ in
     };
 
     "org/gnome/desktop/peripherals/touchpad" = {
+      natural-scroll = false;
       two-finger-scrolling-enabled = true;
     };
 
@@ -92,14 +97,14 @@ in
 
     "org/gnome/settings-daemon/plugins/color" = {
       night-light-enabled = true;
-      night-light-last-coordinates = mkTuple [ 42.29400143988481 "-71.1081" ];
+      night-light-last-coordinates = mkTuple [ 44.91949856011519 "-93.3719" ];
       night-light-schedule-automatic = false;
       night-light-temperature = "uint32 2261";
     };
 
     "org/gnome/settings-daemon/plugins/media-keys" = {
       custom-keybindings = [ "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/" "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/" "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/" ];
-      screensaver = "@as []";
+      screensaver = [ "@as []" ];
       search = [ "<Super>slash" ];
       www = [ "<Super>x" ];
     };

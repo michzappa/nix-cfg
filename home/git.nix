@@ -7,6 +7,7 @@
     userEmail = "zapprich@gmail.com";
     extraConfig = {
       credential = { helper = "store"; };
+      pull = { rebase = false; };
     };
   };
 }
