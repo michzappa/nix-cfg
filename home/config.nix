@@ -3,7 +3,7 @@
 {
   imports = [
     ./dconf.nix
-    ./fish.nix
+    # ./fish.nix
     ./emacs
     ./git.nix
     #./gnome-terminal.nix
@@ -13,6 +13,7 @@
 
   programs.home-manager.enable = true;
   #programs.gnome-terminal.enable = true;
+  programs.fish.enable = true;
 
   home.packages = with pkgs; [
     #Utilities
