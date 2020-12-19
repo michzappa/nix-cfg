@@ -1,5 +1,6 @@
 { config, pkgs, lib, ... }:
 
+# This file contains configuration I expect on any computer I am using.
 {
   imports =
     [
@@ -30,28 +31,7 @@
     useDHCP = false;
   };
 
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Select internationalisation properties.
-  i18n = {
-    defaultLocale = "en_US.UTF-8";
-    # input methods for chinese and japanese. don't show up on GNOME or in fcitx-config
-    # inputMethod = {
-    #   enabled = "fcitx";
-    #   fcitx.engines = with pkgs.fcitx-engines; [
-    #     mozc
-    #     chewing
-    #     cloudpinyin
-    #   ];
-    #   enabled = "ibus";
-    #   ibus.engines = with pkgs.ibus-engines; [
-    #     libpinyin
-    #     mozc
-    #   ];
-    # };
-  };
+  i18n.defaultLocale = "en_US.UTF-8";
 
   console = {
     font = "Lat2-Terminus16";
@@ -85,12 +65,12 @@
   # Or disable the firewall altogether.
   networking.firewall.enable = false;
 
-  # Enable sound and bluetooth.
   sound.enable = true;
   hardware = {
     bluetooth = {
       enable = true;
     };
+
     pulseaudio = {
       enable = true;
       package = pkgs.pulseaudioFull;
@@ -104,6 +84,13 @@
     printing = {
       enable = true;
       drivers = [pkgs.gutenprint pkgs.gutenprintBin pkgs.hplip pkgs.hplipWithPlugin];
+    };
+  };
+
+  services = {
+    xserver = {
+      enable = true;
+      layout = "us";
     };
   };
 

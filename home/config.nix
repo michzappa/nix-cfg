@@ -10,7 +10,6 @@
   ];
 
   programs.home-manager.enable = true;
-  #programs.gnome-terminal.enable = true;
 
   home.packages = with pkgs; [
     #Utilities

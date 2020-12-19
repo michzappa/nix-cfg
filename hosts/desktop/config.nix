@@ -1,5 +1,6 @@
 { config, pkgs, lib, ... }:
 
+# This file wraps together all the parts of this host's configuration
 {
   imports =
     [

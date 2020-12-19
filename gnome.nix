@@ -1,5 +1,7 @@
 { config, pkgs, lib, ... }:
 
+# Configuration for using the GNOME3 desktop environment. Further configuration
+# is done via home-manager
 {
   programs.gnome-terminal.enable = true;
 
@@ -13,9 +15,6 @@
     udev.packages = [ pkgs.gnome3.gnome-settings-daemon ];
 
     xserver = {
-      enable = true;
-      layout = "us";
-
       displayManager.gdm.enable = true;
       desktopManager.gnome3.enable = true;
     };

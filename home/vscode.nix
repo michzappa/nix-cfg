@@ -14,8 +14,6 @@
     # don't quite know how this works
     extensions = with pkgs.vscode-extensions; [
       bbenoist.Nix
-      # ms-python.python
-      # ms-vscode.cpptools
 
     ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace[
       {
