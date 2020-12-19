@@ -58,51 +58,18 @@
     keyMap = "us";
   };
 
-  # Set your time zone.
-  time.timeZone = "America/New_York";
-
-  programs = {
-    gnome-terminal = {
-      enable = true;
-    };
-
-    fish = {
-      enable = true;
-    };
-  };
+  # time.timeZone = "America/New_York";
+  time.timeZone = "America/Chicago";
   
+  programs.gnome-terminal.enable = true;
   environment = {
     variables = { EDITOR = "vim"; };
   
     systemPackages = with pkgs; [
-      #Utilities
+      home-manager
+      git
       wget
       vim
-      git
-      home-manager
-      neofetch
-      networkmanager
-      gparted
-      #dconf2nix - put back in after a new release
-
-      #Apps
-      firefox
-      spotify
-      teams
-      libreoffice
-      jetbrains.idea-ultimate
-      jetbrains.clion
-      vscode
-      signal-desktop
-      bitwarden
-      # discord
-      # steam
-      
-      #Desktop
-      gnome3.gnome-tweaks
-      gnome3.gnome-terminal
-      gnome3.nautilus
-      gnomeExtensions.appindicator
     ];
   };
   
@@ -112,8 +79,6 @@
     noto-fonts-emoji
     jetbrains-mono
   ];
-
-  # List services that you want to enable:
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
@@ -135,19 +100,23 @@
   };
 
   services = {
-    emacs = {
-      enable = true;
-    };
+    emacs.enable = true;
     
-    openssh = {
-      enable = true;
+    dbus.packages = [ pkgs.gnome3.dconf ];
+
+    gnome3 = {
+      core-utilities.enable = false;
     };
+
+    openssh.enable = true;
       
     printing = {
       enable = true;
       drivers = [pkgs.gutenprint pkgs.gutenprintBin pkgs.hplip pkgs.hplipWithPlugin];
     };
       
+    udev.packages = [ pkgs.gnome3.gnome-settings-daemon ];
+
     xserver = {
       enable = true;
       layout = "us";
@@ -155,13 +124,6 @@
       displayManager.gdm.enable = true;
       desktopManager.gnome3.enable = true;
     };
-
-    gnome3 = {
-      core-utilities.enable = false;
-    };
-      
-    dbus.packages = [ pkgs.gnome3.dconf ];
-    udev.packages = [ pkgs.gnome3.gnome-settings-daemon ];
   };
 
   users.users.michael = {

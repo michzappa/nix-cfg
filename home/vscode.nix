@@ -4,6 +4,11 @@
   nixpkgs.config.allowUnfree = true;
   programs.vscode = {
     enable = true;
+    
+    userSettings = {
+      "[nix]"."editor.tabSize" = 2;
+    };
+    
     # to update vscode packages run 'nixpkgs/pkgs/misc/vscode-extensions/update_installed_exts.sh' 
     # at https://github.com/NixOS/nixpkgs/blob/master/pkgs/misc/vscode-extensions/update_installed_exts.sh
     # don't quite know how this works

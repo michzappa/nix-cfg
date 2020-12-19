@@ -97,7 +97,7 @@ in
 
     "org/gnome/settings-daemon/plugins/color" = {
       night-light-enabled = true;
-      night-light-last-coordinates = mkTuple [ 44.91502986011519 "-93.3620452" ];
+      night-light-last-coordinates = mkTuple [ 44.88350143988481 "-93.3719" ];
       night-light-schedule-automatic = false;
       night-light-temperature = "uint32 2261";
     };
@@ -171,7 +171,18 @@ in
 
     "org/gtk/settings/file-chooser" = {
       clock-format = "12h";
-      show-hidden = true;
+      date-format = "regular";
+      location-mode = "path-bar";
+      show-hidden = false;
+      show-size-column = true;
+      show-type-column = true;
+      sidebar-width = 158;
+      sort-column = "name";
+      sort-directories-first = false;
+      sort-order = "ascending";
+      type-format = "category";
+      window-position = mkTuple [ 345 79 ];
+      window-size = mkTuple [ 1231 902 ];
     };
 
   };

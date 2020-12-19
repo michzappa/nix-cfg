@@ -13,5 +13,5 @@ sudo nixos-rebuild switch
 - dconf dump / > ~/dconf.settings
 - dconf2nix -i ~/dconf.settings -o /etc/nixos/home/dconf.nix
 * To-Do
-- get rid of emacs?
-- gnome extensions in home-manager?
+- get rid of emacs? submodule?
+- figure out what's weird about enabling gnome-terminal
