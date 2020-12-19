@@ -3,7 +3,8 @@
 {
   imports =
     [
-      ../common.nix
+      ../gnome.nix
+      ../system.nix
       ../hardware-configuration.nix
     ];
 

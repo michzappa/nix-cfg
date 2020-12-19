@@ -16,3 +16,6 @@ sudo nixos-rebuild switch
 - dconf2nix -i ~/dconf.settings -o /etc/nixos/home/dconf.nix
 * To-Do
 - figure out what's weird about enabling gnome-terminal
+- read through manual and other's configs for other fun things
+- clear cache, file backups, etc
+- nvidia stuff for xps?

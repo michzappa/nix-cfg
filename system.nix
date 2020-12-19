@@ -61,7 +61,6 @@
   # time.timeZone = "America/New_York";
   time.timeZone = "America/Chicago";
   
-  programs.gnome-terminal.enable = true;
   environment = {
     variables = { EDITOR = "vim"; };
   
@@ -100,35 +99,20 @@
   };
 
   services = {
-    emacs.enable = true;
-    
-    dbus.packages = [ pkgs.gnome3.dconf ];
-
-    gnome3 = {
-      core-utilities.enable = false;
-    };
-
     openssh.enable = true;
       
     printing = {
       enable = true;
       drivers = [pkgs.gutenprint pkgs.gutenprintBin pkgs.hplip pkgs.hplipWithPlugin];
     };
-      
-    udev.packages = [ pkgs.gnome3.gnome-settings-daemon ];
-
-    xserver = {
-      enable = true;
-      layout = "us";
-
-      displayManager.gdm.enable = true;
-      desktopManager.gnome3.enable = true;
-    };
   };
+
+  programs.fish.enable = true;
 
   users.users.michael = {
     shell = pkgs.fish;
     isNormalUser = true;
+    description = "Michael Zappa";
     extraGroups = [ "wheel" "networkmanager" "audio" "video" ];
   };
 
