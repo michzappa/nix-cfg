@@ -23,12 +23,13 @@ in
     };
 
     "org/gnome/control-center" = {
-      last-panel = "keyboard";
+      last-panel = "region";
     };
 
     "org/gnome/desktop/input-sources" = {
       current = "uint32 0";
-      sources = [ (mkTuple [ "xkb" "us" ]) ];
+      show-all-sources = true;
+      sources = [ (mkTuple [ "xkb" "us" ]) (mkTuple [ "xkb" "us+alt-intl" ]) ];
       xkb-options = [ "terminate:ctrl_alt_bksp" "lv3:ralt_switch" ];
     };
 
@@ -60,6 +61,7 @@ in
     };
 
     "org/gnome/desktop/peripherals/touchpad" = {
+      disable-while-typing = false;
       natural-scroll = false;
       two-finger-scrolling-enabled = true;
     };
@@ -143,13 +145,13 @@ in
     };
 
     "org/gnome/shell" = {
-      app-picker-view = "uint32 1";
+      app-picker-view = "uint32 0";
       enabled-extensions = [ "apps-menu@gnome-shell-extensions.gcampax.github.com" "appindicatorsupport@rgcjonas.gmail.com" ];
       favorite-apps = [ "firefox.desktop" "org.gnome.Terminal.desktop" "emacs.desktop" "idea-ultimate.desktop" "org.gnome.Nautilus.desktop" ];
     };
 
     "org/gnome/shell/keybindings" = {
-      focus-active-notification = "@as []";
+      focus-active-notification = [ "<Alt>p" ];
       toggle-message-tray = [ "<Super>v" ];
     };
 
@@ -188,6 +190,5 @@ in
       window-position = mkTuple [ 0 79 ];
       window-size = mkTuple [ 1231 902 ];
     };
-
   };
 }

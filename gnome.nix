@@ -9,7 +9,7 @@
     gnome3.gnome-terminal
     gnome3.nautilus
     gnomeExtensions.appindicator
-  ]
+  ];
 
   services = {
     dbus.packages = [ pkgs.gnome3.dconf ];
