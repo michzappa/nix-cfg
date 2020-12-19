@@ -26,13 +26,7 @@
     libreoffice
     signal-desktop
     spotify
-    steam
+    # steam - doesn't work well/at all, don't really want it anyways
     teams
-
-    #GNOME
-    gnome3.gnome-tweaks
-    gnome3.gnome-terminal
-    gnome3.nautilus
-    gnomeExtensions.appindicator
   ];
 }

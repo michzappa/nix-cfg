@@ -6,7 +6,7 @@
     [
       ../gnome.nix
       ../system.nix
-      ../hardware-configuration.nix
+      ./hardware-configuration.nix
     ];
 
   networking.hostName = "desktop"; # Define your hostname.

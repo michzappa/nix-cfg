@@ -1,9 +1,15 @@
 { config, pkgs, lib, ... }:
 
-# Configuration for using the GNOME3 desktop environment. Further configuration
-# is done via home-manager
+# Configuration for using the GNOME3 desktop environment.
 {
   programs.gnome-terminal.enable = true;
+
+  environment.systemPackages = with pkgs; [
+    gnome3.gnome-tweaks
+    gnome3.gnome-terminal
+    gnome3.nautilus
+    gnomeExtensions.appindicator
+  ]
 
   services = {
     dbus.packages = [ pkgs.gnome3.dconf ];

@@ -44,6 +44,7 @@
   environment = {
     variables = { EDITOR = "vim"; };
   
+    # bare minimum system packages
     systemPackages = with pkgs; [
       home-manager
       git
