@@ -35,7 +35,7 @@ in
     "org/gnome/desktop/interface" = {
       clock-format = "12h";
       gtk-im-module = "gtk-im-context-simple";
-      gtk-theme = "HighContrastInverse";
+      gtk-theme = "Adwaita-dark";
       show-battery-percentage = false;
     };
 
@@ -97,7 +97,7 @@ in
 
     "org/gnome/settings-daemon/plugins/color" = {
       night-light-enabled = true;
-      night-light-last-coordinates = mkTuple [ 44.88350143988481 "-93.3719" ];
+      night-light-last-coordinates = mkTuple [ 44.91949856011519 "-93.3719" ];
       night-light-schedule-automatic = false;
       night-light-temperature = "uint32 2261";
     };
