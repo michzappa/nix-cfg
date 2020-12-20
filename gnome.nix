@@ -5,6 +5,7 @@
   programs.gnome-terminal.enable = true;
 
   environment.systemPackages = with pkgs; [
+    gnome3.file-roller
     gnome3.gnome-tweaks
     gnome3.gnome-terminal
     gnome3.nautilus
