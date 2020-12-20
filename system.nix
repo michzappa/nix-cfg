@@ -27,6 +27,7 @@
   networking = {
     networkmanager = {
       enable = true;  # Enables wireless support via network manager
+      wifi.powersave = true;
     };
     useDHCP = false;
   };
