@@ -6,6 +6,11 @@ let
 in
 {
   dconf.settings = {
+
+    "desktop/ibus/general" = {
+      preload-engines = [ "libpinyin" ];
+    };
+
     "org/gnome/Totem" = {
       active-plugins = [ "movie-properties" "save-file" "vimeo" "apple-trailers" "rotation" "recent" "autoload-subtitles" "media-player-keys" "open-directory" "variable-rate" "skipto" "screensaver" "screenshot" ];
       subtitle-encoding = "UTF-8";
@@ -17,14 +22,15 @@ in
 
     "org/gnome/desktop/input-sources" = {
       current = "uint32 0";
+      mru-sources = [ (mkTuple [ "xkb" "us" ]) (mkTuple [ "ibus" "libpinyin" ]) (mkTuple [ "xkb" "us+alt-intl" ]) ];
       show-all-sources = true;
-      sources = [ (mkTuple [ "xkb" "us" ]) (mkTuple [ "xkb" "us+alt-intl" ]) ];
+      sources = [ (mkTuple [ "xkb" "us" ]) (mkTuple [ "xkb" "us+alt-intl" ]) (mkTuple [ "ibus" "libpinyin" ]) ];
       xkb-options = [ "terminate:ctrl_alt_bksp" "lv3:ralt_switch" ];
     };
 
     "org/gnome/desktop/interface" = {
       clock-format = "12h";
-      gtk-im-module = "gtk-im-context-simple";
+      gtk-im-module = "ibus";
       gtk-theme = "Nordic-darker";
       show-battery-percentage = false;
     };
@@ -100,7 +106,7 @@ in
 
     "org/gnome/settings-daemon/plugins/color" = {
       night-light-enabled = true;
-      night-light-last-coordinates = mkTuple [ 44.906031080057595 "-93.3620422" ];
+      night-light-last-coordinates = mkTuple [ 44.88350143988481 "-93.3719" ];
       night-light-schedule-automatic = false;
       night-light-temperature = "uint32 2261";
     };
