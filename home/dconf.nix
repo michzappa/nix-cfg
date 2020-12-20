@@ -6,17 +6,6 @@ let
 in
 {
   dconf.settings = {
-    "apps/seahorse/windows/key-manager" = {
-      height = 476;
-      width = 600;
-    };
-
-    "org/gnome/Music" = {
-      window-maximized = true;
-      window-position = [ 0 0 ];
-      window-size = [ 1920 1006 ];
-    };
-
     "org/gnome/Totem" = {
       active-plugins = [ "movie-properties" "save-file" "vimeo" "apple-trailers" "rotation" "recent" "autoload-subtitles" "media-player-keys" "open-directory" "variable-rate" "skipto" "screensaver" "screenshot" ];
       subtitle-encoding = "UTF-8";
@@ -105,12 +94,13 @@ in
     };
 
     "org/gnome/nautilus/window-state" = {
-      initial-size = mkTuple [ 890 550 ];
+      initial-size = mkTuple [ 890 559 ];
       maximized = false;
     };
 
     "org/gnome/settings-daemon/plugins/color" = {
       night-light-enabled = true;
+      night-light-last-coordinates = mkTuple [ 44.906031080057595 "-93.3620422" ];
       night-light-schedule-automatic = false;
       night-light-temperature = "uint32 2261";
     };
