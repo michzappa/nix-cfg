@@ -21,6 +21,7 @@ in stdenv.mkDerivation rec {
       nixpkgs.makeWrapper
     ];
 
+    # from the nordvpn AUR PKGBUILD
     runtimeDependencies = [
       nixpkgs.libxslt
       nixpkgs.iptables
@@ -32,8 +33,15 @@ in stdenv.mkDerivation rec {
     installPhase = ''
       mkdir -p $out/bin
       mkdir -p $out/sbin
-      mv "./usr/sbin/nordvpnd"  $out/sbin
+      mkdir -p $out/lib/sysusers.d
+      mkdir -p $out/share
+
+      mv "./usr/sbin/nordvpnd"  $out/bin
       mv "./usr/bin/nordvpn" $out/bin
+
+      cp -r ./usr/lib/systemd $out/lib/systemd
+      cp ./usr/lib/tmpfiles.d/nordvpn.conf $out/lib/sysusers.d
+      cp -r ./usr/share $out/share
     '';
 
     meta = with stdenv.lib; {
