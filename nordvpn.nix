@@ -21,6 +21,10 @@ in stdenv.mkDerivation rec {
       nixpkgs.makeWrapper
     ];
 
+    buildInputs = [
+      nixpkgs.systemd
+    ];
+
     # from the nordvpn AUR PKGBUILD
     runtimeDependencies = [
       nixpkgs.libxslt

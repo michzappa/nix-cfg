@@ -102,7 +102,7 @@
     shell = pkgs.fish;
     isNormalUser = true;
     description = "Michael Zappa";
-    extraGroups = [ "wheel" "networkmanager" "audio" "video" ];
+    extraGroups = [ "wheel" "networkmanager" "audio" "video" "nordvpn" ];
   };
 
   # This value determines the NixOS release from which the default

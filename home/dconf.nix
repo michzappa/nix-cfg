@@ -6,6 +6,13 @@ let
 in
 {
   dconf.settings = {
+    "ca/desrt/dconf-editor" = {
+      saved-pathbar-path = "/desktop/";
+      saved-view = "/";
+      window-height = 495;
+      window-is-maximized = false;
+      window-width = 557;
+    };
 
     "desktop/ibus/general" = {
       preload-engines = [ "libpinyin" ];
@@ -51,12 +58,20 @@ in
       application-id = "gnome-power-panel.desktop";
     };
 
+    "org/gnome/desktop/notifications/application/org-gnome-fileroller" = {
+      application-id = "org.gnome.FileRoller.desktop";
+    };
+
     "org/gnome/desktop/notifications/application/org-gnome-nautilus" = {
       application-id = "org.gnome.Nautilus.desktop";
     };
 
     "org/gnome/desktop/notifications/application/org-gnome-tweaks" = {
       application-id = "org.gnome.tweaks.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/signal-desktop" = {
+      application-id = "signal-desktop.desktop";
     };
 
     "org/gnome/desktop/notifications/application/teams" = {
@@ -73,6 +88,10 @@ in
       report-technical-problems = true;
     };
 
+    "org/gnome/desktop/session" = {
+      idle-delay = "uint32 900";
+    };
+
     "org/gnome/desktop/wm/keybindings" = {
       close = [ "<Super>q" ];
     };
@@ -84,6 +103,31 @@ in
     "org/gnome/evolution-data-server" = {
       migrated = true;
       network-monitor-gio-name = "";
+    };
+
+    "org/gnome/file-roller/dialogs/extract" = {
+      recreate-folders = true;
+      skip-newer = false;
+    };
+
+    "org/gnome/file-roller/dialogs/new" = {
+      default-extension = ".tar.gz";
+      encrypt-header = false;
+      volume-size = 0;
+    };
+
+    "org/gnome/file-roller/listing" = {
+      list-mode = "all-files";
+      name-column-width = 250;
+      show-path = true;
+      sort-method = "name";
+      sort-type = "ascending";
+    };
+
+    "org/gnome/file-roller/ui" = {
+      sidebar-width = 200;
+      window-height = 480;
+      window-width = 600;
     };
 
     "org/gnome/mutter" = {
@@ -106,7 +150,7 @@ in
 
     "org/gnome/settings-daemon/plugins/color" = {
       night-light-enabled = true;
-      night-light-last-coordinates = mkTuple [ 44.88350143988481 "-93.3719" ];
+      night-light-last-coordinates = mkTuple [ 44.892500719942404 "-93.3719" ];
       night-light-schedule-automatic = false;
       night-light-temperature = "uint32 2261";
     };
@@ -140,6 +184,11 @@ in
       binding = "<Super>c";
       command = "code";
       name = "VSCode";
+    };
+
+    "org/gnome/settings-daemon/plugins/power" = {
+      sleep-inactive-ac-type = "nothing";
+      sleep-inactive-battery-type = "suspend";
     };
 
     "org/gnome/settings-daemon/plugins/xsettings" = {
