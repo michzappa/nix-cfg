@@ -16,6 +16,7 @@ in
       ../gnome.nix
       ../system.nix
       ./hardware-configuration.nix
+#      ../xmonad.nix
     ];
 
   

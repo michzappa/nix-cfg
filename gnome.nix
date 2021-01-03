@@ -10,7 +10,7 @@
     gnome3.gnome-terminal
     gnome3.nautilus
     gnomeExtensions.appindicator
-    nordic # gtk theme
+    # nordic # gtk theme, now handled in home/gtk.nix
   ];
 
   services = {
@@ -26,6 +26,8 @@
       displayManager.gdm.enable = true;
       desktopManager.gnome3.enable = true;
     };
+
+    
   };
 
   i18n.inputMethod = {

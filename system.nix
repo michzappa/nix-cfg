@@ -11,7 +11,7 @@
 
   home-manager = {
     useUserPackages = true;
-    users.michael = import ./home/config.nix;
+    users.michael = import ./home/default.nix;
   };
   
   # Use the systemd-boot EFI boot loader.

@@ -5,11 +5,17 @@
     ./dconf.nix
     ./emacs
     ./git.nix
+    ./gtk.nix
     ./vim.nix
     ./vscode.nix
+    ./udiskie.nix
+    #./xmonad
   ];
 
   programs.home-manager.enable = true;
+  nixpkgs.config.allowUnfree = true;
+
+  services.network-manager-applet.enable = true;
 
   home.packages = with pkgs; [
     #Utilities
@@ -28,5 +34,9 @@
     spotify
     # steam - doesn't work well/at all, don't really want it anyways
     teams
+
+    # Programming
+    rustc
+    cargo
   ];
 }

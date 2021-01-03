@@ -24,26 +24,26 @@ in
     };
 
     "org/gnome/control-center" = {
-      last-panel = "region";
+      last-panel = "keyboard";
     };
 
     "org/gnome/desktop/input-sources" = {
       current = "uint32 0";
       mru-sources = [ (mkTuple [ "xkb" "us" ]) (mkTuple [ "ibus" "libpinyin" ]) (mkTuple [ "xkb" "us+alt-intl" ]) ];
       show-all-sources = true;
-      sources = [ (mkTuple [ "xkb" "us" ]) (mkTuple [ "xkb" "us+alt-intl" ]) (mkTuple [ "ibus" "libpinyin" ]) ];
-      xkb-options = [ "terminate:ctrl_alt_bksp" "lv3:ralt_switch" ];
+      sources = [ (mkTuple [ "xkb" "us" ]) ];
+      xkb-options = [ "terminate:ctrl_alt_bksp" "lv3:ralt_switch" "caps:escape" ];
     };
 
     "org/gnome/desktop/interface" = {
       clock-format = "12h";
-      gtk-im-module = "ibus";
+      gtk-im-module = "gtk-im-context-simple";
       gtk-theme = "Nordic-darker";
       show-battery-percentage = false;
     };
 
     "org/gnome/desktop/notifications" = {
-      application-children = [ "gnome-network-panel" "gnome-power-panel" "firefox" "teams" "org-gnome-tweaks" "org-gnome-nautilus" ];
+      application-children = [ "gnome-network-panel" "gnome-power-panel" "firefox" "teams" "org-gnome-tweaks" "org-gnome-nautilus" "spotify" ];
     };
 
     "org/gnome/desktop/notifications/application/firefox" = {
@@ -74,6 +74,10 @@ in
       application-id = "signal-desktop.desktop";
     };
 
+    "org/gnome/desktop/notifications/application/spotify" = {
+      application-id = "spotify.desktop";
+    };
+
     "org/gnome/desktop/notifications/application/teams" = {
       application-id = "teams.desktop";
     };
@@ -94,6 +98,10 @@ in
 
     "org/gnome/desktop/wm/keybindings" = {
       close = [ "<Super>q" ];
+      switch-applications = "@as []";
+      switch-applications-backward = "@as []";
+      switch-windows = [ "<Alt>Tab" ];
+      switch-windows-backward = [ "<Shift><Alt>Tab" ];
     };
 
     "org/gnome/desktop/wm/preferences" = {
@@ -150,7 +158,6 @@ in
 
     "org/gnome/settings-daemon/plugins/color" = {
       night-light-enabled = true;
-      night-light-last-coordinates = mkTuple [ 44.892500719942404 "-93.3719" ];
       night-light-schedule-automatic = false;
       night-light-temperature = "uint32 2261";
     };

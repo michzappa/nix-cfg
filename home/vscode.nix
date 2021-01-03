@@ -14,7 +14,7 @@
     # at https://github.com/NixOS/nixpkgs/blob/master/pkgs/misc/vscode-extensions/update_installed_exts.sh
     # don't quite know how this works
     extensions = with pkgs.vscode-extensions; [
-      bbenoist.Nix
+       bbenoist.Nix
 
     ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace[
       {
