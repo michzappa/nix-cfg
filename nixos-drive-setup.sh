@@ -17,12 +17,4 @@ mkdir -p /mnt/boot
 mount /dev/disk/by-label/boot /mnt/boot
 swapon /dev/nvme0n1p2
 
-# cloning and setting up config
-ln -s /mnt/etc/nixos/hosts/$1 /mnt/etc/nixos/host
-nix-channel --add https://github.com/nix-community/home-manager/archive/release-20.09.tar.gz home-manager
-nix-channel --update
-
-nixos-install
-passwd
-echo "Make sure to add your user after reboot!";
-reboot
+echo "Now clone or generate config to /mnt";
