@@ -1,5 +1,3 @@
-sudo su
-
 # first argument $1 is hostname
 # TODO second should be drive name /dev/$2
 
@@ -20,10 +18,6 @@ mount /dev/disk/by-label/boot /mnt/boot
 swapon /dev/nvme0n1p2
 
 # cloning and setting up config
-git clone https://github.com/michzappa/nix-cfg.git /mnt/etc/nixos
-cd /mnt/etc/nixos
-git submodule init
-git submodule update
 ln -s /mnt/etc/nixos/hosts/$1 /mnt/etc/nixos/host
 nix-channel --add https://github.com/nix-community/home-manager/archive/release-20.09.tar.gz home-manager
 nix-channel --update
